@@ -1,0 +1,68 @@
+{
+  "name": "<%= name %>",
+  "version": "0.1.0",
+  "description": "<%= description %>",
+  "author": {
+    "name": "<%= author %>",
+    "email": "<%= email %>",
+    "url": "<%= homepage %>"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build:stage": "vue-cli-service build --mode staging",
+    "deploy": "npm run build && cross-env NODE_ENV=production node ./deploy",
+    "deploy:stage": "npm run build:stage && cross-env NODE_ENV=staging node ./deploy",
+    "preview": "node build/index.js --preview",
+    "test:unit": "jest --clearCache && vue-cli-service test:unit",
+    "lint": "eslint --ext .js,.vue src",
+    "test:ci": "npm run lint && npm run test:unit"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "core-js": "^3.6.4",
+    "js-cookie": "^2.2.1",
+    "moment": "^2.24.0",
+    "normalize.css": "^8.0.1",
+    "qs": "^6.9.1",
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.6",
+    "vuex": "^3.1.3"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.8.7",
+    "@vue/cli-plugin-babel": "~4.2.3",
+    "@vue/cli-plugin-eslint": "~4.2.3",
+    "@vue/cli-plugin-router": "~4.2.3",
+    "@vue/cli-plugin-unit-jest": "~4.2.3",
+    "@vue/cli-plugin-vuex": "~4.2.3",
+    "@vue/cli-service": "~4.2.3",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/test-utils": "1.0.0-beta.32",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-component": "^1.1.1",
+    "chalk": "^3.0.0",
+    "connect": "^3.7.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "launch-editor-middleware": "^2.2.1",
+    "prettier": "^1.19.1",
+    "runjs": "^4.4.2",
+    "sass": "^1.26.3",
+    "sass-loader": "^8.0.2",
+    "scp2": "^0.5.0",
+    "script-ext-html-webpack-plugin": "^2.1.4",
+    "serve-static": "^1.14.1",
+    "vue-template-compiler": "^2.6.11",
+    "webpack-parallel-uglify-plugin": "^1.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "<%= repository %>"
+  },
+  "keywords": [<% for(var i=0; i<keywords.length; i++) {%>"<%= keywords[i] %>"<% if(i<keywords.length-1) {%>,<% } %><% } %>],
+  "license": "<%= license %>"
+}
