@@ -25,14 +25,14 @@ module.exports = class extends Generator {
       {
         type: "input",
         name: "namespace",
-        message: "请输入您的项目命名空间，例如@6dyang:",
+        message: "请输入您的项目命名空间，例如@6dyang",
         default: ""
       },
       {
         type: "input",
         name: "name",
         message: "请输入项目名称:",
-        default: "vue-init"
+        default: "project"
       },
       {
         type: "input",
